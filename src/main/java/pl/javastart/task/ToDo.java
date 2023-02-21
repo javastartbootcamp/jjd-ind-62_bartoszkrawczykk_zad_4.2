@@ -7,15 +7,12 @@ public class ToDo {
     Person person;
 
     public ToDo(String name, String description, int priority, Person person) {
-        this.name = name;
-        this.description = description;
-        this.priority = priority;
+        this(name, description, priority);
         this.person = person;
     }
 
     public ToDo(String name, String description, int priority) {
-        this.name = name;
-        this.description = description;
+        this(name, description);
         this.priority = priority;
     }
 
@@ -56,15 +53,16 @@ public class ToDo {
         this.person = person;
     }
 
-    void highPriority() {
-        priority = 1;
+    boolean highPriority() {
+        return priority >= 1;
     }
 
-    void mediumPriority() {
-        priority = 0;
+    boolean mediumPriority() {
+        return priority == 0;
     }
 
-    void lowPriority() {
-        priority = -1;
+    boolean lowPriority() {
+        return priority <= -1;
     }
+
 }
